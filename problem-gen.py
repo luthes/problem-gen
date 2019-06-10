@@ -22,11 +22,14 @@ class Problem():
 
 def generate_problem_array():
     problem_list = [[],[],[],[],[],[],[],[],[],[]]
+    first_range = sys.argv[1]
+    second_range = sys.argv[2]
+    op = sys.argv[3]
     for j in range (0,10):
         for i in range(0,10):
-            first_number = random.randint(0,10)
-            second_number = random.randint(0,10)
-            problem = Problem(first_number, second_number, "+")
+            first_number = random.randint(int(first_range), int(second_range))
+            second_number = random.randint(int(first_range), int(second_range))
+            problem = Problem(first_number, second_number, str(op))
             problem_list[j].append(problem)
     return problem_list
 
