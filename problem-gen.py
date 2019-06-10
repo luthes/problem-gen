@@ -25,8 +25,8 @@ def generate_problem_array():
     first_range = sys.argv[1]
     second_range = sys.argv[2]
     op = sys.argv[3]
-    for j in range (0,10):
-        for i in range(0,10):
+    for j in range (0,5):
+        for i in range(0,4):
             first_number = random.randint(int(first_range), int(second_range))
             second_number = random.randint(int(first_range), int(second_range))
             problem = Problem(first_number, second_number, str(op))
@@ -41,14 +41,15 @@ def main():
         f.write('\n\n')
         for row in problems:
             for col in row:
-                f.write(f'\t{col.a:>5}')
+                f.write(f'\t\t{col.a:>5}')
             f.write('\n')
             for col in row:
-                f.write(f'\t{col.operator}{col.b:>4}')
+                f.write(f'\t\t{col.operator}{col.b:>4}')
             f.write('\n')
             for col in row:
-                f.write('\t______')
+                f.write('\t\t______')
             for col in row:
                 f.write('\n')
+        f.write('\n')
 main()
 
